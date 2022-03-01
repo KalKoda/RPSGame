@@ -3,8 +3,8 @@
 using namespace std;
 
 Referee::Referee(){
-    int HumanMove = 0;
-    int RobotMove =1 ;
+    //int HumanMove = 0;
+    //int RobotMove =1 ;
 	std::string winnerName = "Neither, it's a tie";
     //int winnerName = 4;
 }

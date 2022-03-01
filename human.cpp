@@ -4,7 +4,7 @@ using namespace std;
 
 Human::Human(){
 	std::string name = "playerName";
-    int choice = 0;
+    //int choice = 0;
 }
 
 int Human::getChoice(){
