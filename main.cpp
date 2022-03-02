@@ -1,35 +1,30 @@
 #include "human.h"
-//#include "robot.h"
+#include "robot.h"
 #include "referee.h"
 #include <iostream>
+#include <string>
 using namespace std;
-
-/*QUESTIONS FOR PRAC!!!!!!
-1. Help with making Makefile work properly
-2. is there a better way to setup win lose options than manually organising all options
-3. Best way to setup random number generator for Computer
-4. SHould I be using CS50 if not, what should I be using
-5. how to submit to gitfolder using cs50?
-*/
 
 
 int main(){
 
     Human player1;
-	//Robot Robot1(3);
-	Referee RPCRef;
+    Robot Robot1;
+    Referee RPCRef;
 
 
 
 
-    player1.ask_move();
-    cout << player1.getChoice() << endl; //takes humans input
+    player1.ask_move(); //takes human's input
+    //cout << player1.getChoice() << endl;
     RPCRef.setHumanMove(player1.getChoice());
 
-    RPCRef.setRobotMove(1);
+    Robot1.RandomMove(); //generates random number between 1-3
+    RPCRef.setRobotMove(Robot1.getRobChoice());
 
-    cout << "human move is..." << RPCRef.getHumanMove() << endl;
-    cout << "and robot move is..." << RPCRef.getRobotMove() << endl;
+
+    cout << "human move is... " << RPCRef.determineMove(RPCRef.getHumanMove()) << endl;
+    cout << "and robot move is... " << RPCRef.determineMove(RPCRef.getRobotMove()) << endl;
 
     RPCRef.check_winner();
     cout << "the winner is... " << RPCRef.getWinner() << "!!! \n";
@@ -38,5 +33,5 @@ int main(){
 
 
 
-	return 0;
+    return 0;
 }

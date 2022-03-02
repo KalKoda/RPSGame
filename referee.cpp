@@ -1,6 +1,7 @@
 #include "referee.h"
 #include <iostream>
 using namespace std;
+#include <string>
 
 Referee::Referee(){
     //int HumanMove = 0;
@@ -20,6 +21,21 @@ int Referee::getHumanMove(){
 }
 int Referee::getRobotMove(){
     return RobotMove;
+}
+
+std::string Referee::determineMove(int num){
+    if (num == 1){
+        return "rock";
+    }
+    if (num==2){
+        return "paper";
+    }
+    if (num == 3){
+        return "scissors";
+    }
+    else {
+        return "wrong input try again";
+    }
 }
 
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <string>
 
 class Referee{
 	private:
@@ -16,6 +17,8 @@ class Referee{
 	    void setRobotMove(int Rmove);
 	    int getHumanMove();
 	    int getRobotMove();
+
+		std::string determineMove(int num);
 
 	    void check_winner();
 
